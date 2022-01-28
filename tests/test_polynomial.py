@@ -56,3 +56,6 @@ def test_pow_poly():
 def test_call():
     assert Polynomial((2, 1))(2) == 4
 
+def test_dx():
+    assert Polynomial((4, 4, 1)).dx() == Polynomial((4, 2))
+

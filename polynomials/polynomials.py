@@ -1,8 +1,6 @@
 from numbers import Number
 from numbers import Integral
-from types import NotImplementedType
 
-from numpy import isin
 
 
 class Polynomial :
@@ -112,6 +110,15 @@ class Polynomial :
             return sum
         else:
             return NotImplemented
+        
+    def dx(self):
+        list_coef= [0] * self.degree() 
+        for i in range(self.degree()):
+            list_coef[i] = (i+1) * self.coefficients[i+1] 
+        return Polynomial(tuple(list_coef))
+
+    def derivative(self):
+        return self.dx()
         
 
 
